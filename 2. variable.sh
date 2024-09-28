@@ -1,4 +1,4 @@
-#!/bib/bash
+#!/bin/bash
 
 #variable : is a value that can change, depending on conditions or on information passed to the program .
 # A Variable in bash can contain a number ,a character,or a string for character
@@ -15,6 +15,9 @@ ma_variable="Bonjour, le monde!"
 
 # Pour afficher une variable dans le terminal, on utilise la commande echo et Pour utiliser la valeur d'une variable, on la précède d'un $ :
 echo $ma_variable
+
+VAR=hello #Dans l'exemple VAR=hello, la variable VAR est une variable de type chaîne de caractères. En Bash, tout ce que tu assigns à une variable est considéré comme une chaîne, même s'il s'agit de chiffres.
+
 
 
 # Les variables peuvent être utilisées dans des scripts Bash pour stocker des informations, exécuter des commandes, ou effectuer des opérations. Par exemple :
