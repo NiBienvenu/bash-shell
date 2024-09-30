@@ -31,5 +31,3 @@ unset array[5]
 
 # affichage du tableau avec l'element supprime
 echo "Tableau avec l'element supprime : ${array[@]}"
-
-
