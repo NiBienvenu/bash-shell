@@ -117,3 +117,94 @@ if [ -f $1 ] && [ -f $2 ]; then
     echo "Les liens symboliques des deux fichiers sont différents."
     fi
 fi
+
+# Conditions sur le nom du répertoire parent des fichiers
+# Utilisation : ./if-else.sh /etc/hosts /etc/hosts
+# Sortie : Les répertoires parents des deux fichiers sont égaux.
+
+if [ -f $1 ] && [ -f $2 ]; then
+    echo "Les arguments sont égaux."    
+    if [ $(dirname $(readlink -f $1)) = $(dirname $(readlink -f $2)) ]; then
+    echo "Les répertoires parents des deux fichiers sont égaux."
+    else
+    echo "Les répertoires parents des deux fichiers sont différents."
+    fi
+fi
+
+# Conditions sur le nom du fichier
+# Utilisation : ./if-else.sh /etc/hosts /etc/hosts
+# Sortie : Les noms des deux fichiers sont égaux.
+
+if [ -f $1 ] && [ -f $2 ]; then
+    echo "Les arguments sont égaux."
+    if [ $(basename $1) = $(basename $2) ]; then
+    echo "Les noms des deux fichiers sont égaux."
+    else
+    echo "Les noms des deux fichiers sont différents."
+    fi
+fi
+
+# Conditions sur la durée de vie du fichier
+# Utilisation : ./if-else.sh /etc/hosts /etc/hosts
+# Sortie : Les durées de vie des deux fichiers sont égales.
+
+if [ -f $1 ] && [ -f $2 ]; then
+    echo "Les arguments sont égaux."
+    if [ $(stat -c %X $1) -eq $(stat -c %X $2) ]; then
+    echo "Les durées de vie des deux fichiers sont égales."
+    else
+    echo "Les durées de vie des deux fichiers sont différentes."
+    fi
+fi
+
+# Conditions sur la version du fichier
+# Utilisation : ./if-else.sh /etc/hosts /etc/hosts
+# Sortie : Les versions des deux fichiers sont égales.
+
+if [ -f $1 ] && [ -f $2 ]; then
+    echo "Les arguments sont égaux."
+    if [ $(stat -c %V $1) = $(stat -c %V $2) ]; then
+    echo "Les versions des deux fichiers sont égales."
+    else
+    echo "Les versions des deux fichiers sont différentes."
+    fi
+fi
+
+# Conditions sur le nom du répertoire parent du répertoire parent des fichiers
+# Utilisation : ./if-else.sh /etc/hosts /etc/hosts
+# Sortie : Les répertoires parents des répertoires parents des deux fichiers sont égaux.
+
+if [ -f $1 ] && [ -f $2 ]; then
+    echo "Les arguments sont égaux."
+    if [ $(dirname $(dirname $(readlink -f $1))) = $(dirname $(dirname $(readlink -f $2))) ]; then
+    echo "Les répertoires parents des répertoires parents des deux fichiers sont égaux."
+    else
+    echo "Les répertoires parents des répertoires parents des deux fichiers sont différents."
+    fi
+fi
+
+# Conditions sur le nom du répertoire parent du répertoire parent du répertoire parent des fichiers
+# Utilisation : ./if-else.sh /etc/hosts /etc/hosts
+# Sortie : Les répertoires parents des répertoires parents des répertoires parents des deux fichiers sont égaux.
+
+if [ -f $1 ] && [ -f $2 ]; then
+    echo "Les arguments sont égaux."
+    if [ $(dirname $(dirname $(dirname $(readlink -f $1)))) = $(dirname $(dirname $(dirname $(readlink -f $2)))) ]; then
+    echo "Les répertoires parents des répertoires parents des répertoires parents des deux fichiers sont égaux."
+    else
+    echo "Les répertoires parents des répertoires parents des répertoires parents des deux fichiers sont différents."
+    fi
+fi
+
+# Conditions sur le nom du répertoire parent du répertoire parent du répertoire parent du répertoire parent des fichiers
+# Utilisation : ./if-else.sh /etc/hosts /etc/hosts
+# Sortie : Les répertoires parents des répertoires parents des répertoires parents des répertoires parents des deux fichiers sont égaux.
+
+if [ -f $1 ] && [ -f $2 ]; then
+    echo "Les arguments sont égaux."
+    if [ $(dirname $(dirname $(dirname $(dirname $(readlink -f $1))))) = $(dirname $(dirname $(dirname $(dirname $(readlink -f $2))))) ]; then
+    echo "Les répertoires parents des répertoires parents des répertoires parents des répertoires parents des deux fichiers sont égaux."
+    else
+    echo "Les répertoires parents des répertoires parents des répertoires parents des répertoires parents des deux fichiers sont différents."
+    fi
+fi
