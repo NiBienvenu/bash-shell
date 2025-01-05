@@ -60,6 +60,7 @@ fi
 # Utilisation : ./if-else.sh "test" "test"
 # Sortie : Les arguments sont égaux.
 
+
 if [[ $1 =~ $2 ]]; then
     echo "Les arguments sont égaux."
 fi
